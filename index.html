@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Desafio06</title>
+  </head>
+  <body>
+    <div class="tela">
+      <div class="cabeçalho">
+        <img src="imagens/logouol.png" />
+        <ion-icon class="escolherDestinatário" name="people" onclick="mostrarUsuarios()"></ion-icon>
+      </div>
+      <div class="usuarios escondido" >
+        <div class="texto1"><h2>Escolha um contato para enviar mensagem:</h2></div>
+        <ul class="quemenviar">
+          <li>
+          <ion-icon name="people"></ion-icon><p>Todos</p>
+          </li>
+        </ul>
+        <div class="texto1"><h2>Escolha a visibilidade:</h2></div>
+        <div class="formadeenvio">
+          <div class="formadeenvio1">
+            <ion-icon name="lock-open"></ion-icon>
+            <p>Público</p>
+          </div>
+          <div class="formadeenvio1">
+            <ion-icon name="lock-closed"></ion-icon>
+            <p>Reservadamente</p>
+          </div>
+        </div>
+      </div>
+      <div class="mensagens" onclick="mostrarUsuarios()">
+        <ul>
+        </ul>
+      </div>
+      <div class="rodapé">
+        <div class="caixademensagem">
+          <input type="text" class="mensagem" placeholder="Escreva aqui..." />
+        </div>
+        <button onclick="adicionarConversas()">
+          <ion-icon name="paper-plane-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

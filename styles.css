@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto Mono", monospace;
+    width: 375px;
+  }
+  
+  .tela {
+    width: 375px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 800px;
+    max-width: 100%;
+    padding: 20px;
+    width: 375px;
+    height: 667px;
+    margin-top: 0px;
+    margin-left: 0px;
+    gap: 0px;
+    opacity: 0px;
+    background: #f3f3f3;
+    margin-left: 0;
+    position: relative;
+  }
+  .cabeçalho {
+    width: 375px;
+    height: 80px;
+    gap: 0px;
+    opacity: 0px;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px 0px #0000000d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cabeçalho > ion-icon {
+    width: 45px;
+    height: 45px;
+    top: 18px;
+    left: 309px;
+    padding: 7.03px 1.41px 7.03px 1.41px;
+    gap: 0px;
+    opacity: 0px;
+    margin-right: 10px;
+  }
+  .rodapé {
+    width: 375px;
+    height: 80px;
+    justify-content: space-between;
+    gap: 0px;
+    opacity: 0px;
+    background: #ffffff;
+    box-shadow: 0px -4px 6px 0px #0000000d;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    z-index: 1;
+    left: 0;
+    align-items: center;
+  }
+  button > ion-icon {
+    width: 26px;
+    height: 26px;
+    top: 614px;
+    left: 331px;
+    gap: 0px;
+    border: 2px 0px 0px 0px;
+    opacity: 0px;
+    border: none;
+    margin-right: 10px;
+  }
+  input {
+    width: 299px;
+    height: 64px;
+    top: 602px;
+    left: 17px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    border: none;
+    font-family: Roboto;
+    margin-left: 8px;
+  }
+  .caixademensagem {
+    width: 299px;
+    height: 64px;
+  }
+  .caixademensagem > h1 {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-top: -28px;
+    margin-left: 10px;
+  }
+  
+  img {
+    width: 75px;
+    height: 53px;
+    top: 16px;
+    margin-left: 10px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  button {
+    border: none;
+    background: #ffffff;
+  }
+  
+  .escondido{
+    display: none;
+  }
+  .usuarios {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 259px;
+    height: 667px;
+    /* gap: 0px; // Essa propriedade não se aplica aqui */
+    opacity: 1; /* Torna o elemento visível */
+    background: #FFFFFF;
+    z-index: 2;
+    /* justify-content: right; // Essa propriedade não se aplica a elementos com position: fixed */
+  position: absolute;
+  }
+.texto1{
+width: 259px;
+height: 84px;
+left: 116px;
+gap: 0px;
+opacity: 0px;
+text-align: center;
+}
+.texto1 >h2{
+font-family: Roboto;
+font-size: 16px;
+font-weight: 700;
+line-height: 18.75px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #000000;
+}
+li {
+  list-style-type: none;
+  display: flex;
+}
+ul{
+  width: 194px;
+height: 36px;
+top: 88px;
+left: 165px;
+gap: 0px;
+opacity: 0px;
+font-family: Roboto;
+font-size: 16px;
+font-weight: 400;
+line-height: 18.75px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: #000000;
+}
+.quemenviar{
+  display: flex;
+  
+}
+.quemenviar > p {
+  font-family: Roboto;
+font-size: 16px;
+font-weight: 400;
+line-height: 18.75px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+
+
+.formadeenvio1{
+  display: flex;
+}
+
+.formadeenvio1 > p{
+  font-family: Roboto;
+font-size: 16px;
+font-weight: 400;
+line-height: 18.75px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+}
