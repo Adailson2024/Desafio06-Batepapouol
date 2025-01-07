@@ -1,6 +1,6 @@
 let conversas=[];
-const campoUsuario=prompt("Qual o seu nome?");
-const horaAtualEmBrasilia = obterHoraBrasilia();
+let campoUsuario=prompt("Qual o seu nome?");
+let horaAtualEmBrasilia = obterHoraBrasilia();
 while (!campoUsuario) {
   campoUsuario = prompt("O nome não pode estar vazio. Por favor, insira seu nome:")};
   entrarNaSala();
@@ -26,7 +26,7 @@ function renderizarConversas(){
 }
 function entrarNaSala(){
   const usuario = {name:campoUsuario};
-  axios.post(`https: mock-api.driven.com.br/api/v6/uol/participants/c2ce79dc-5717-4d56-abe8-e4fa0244db39`,
+  axios.post(`https://mock-api.driven.com.br/api/v6/uol/participants/c2ce79dc-5717-4d56-abe8-e4fa0244db39`,
     usuario)
     .then(()=> {
      console.log("Usuário entrou na sala");
@@ -45,7 +45,7 @@ function entrarNaSala(){
   
 function manterStatusOnline() {
         const usuario = { name: campoUsuario };
-        axios.post(`https: mock-api.driven.com.br/api/v6/uol/status/c2ce79dc-5717-4d56-abe8-e4fa0244db39`, usuario)
+        axios.post(`https://mock-api.driven.com.br/api/v6/uol/status/c2ce79dc-5717-4d56-abe8-e4fa0244db39`, usuario)
         .then(() =>{
         console.log("Status online mantido");
         console.log(`Status de ativo enviado para o usuário: ${campoUsuario}`);
@@ -108,7 +108,7 @@ function adicionarConversas(){
 
 function receberResposta(resposta){
   console.log(resposta);
-  alert(`A ${resposta.data} foi adicionada com sucesso`)
+  alert(`A menssagem foi adicionada com sucesso`)
   
   document.querySelector(".mensagem").value="";
   
@@ -116,6 +116,7 @@ function receberResposta(resposta){
 }
 
 function mostrarErro(){
+  console.error("Error",error)
   alert("Ocorreu um erro, tente mais tarde!")
 }
 //setTimeout(function() {
