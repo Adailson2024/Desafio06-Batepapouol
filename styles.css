@@ -180,6 +180,7 @@ text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 color: #000000;
+overflow-y: auto;
 }
 .quemenviar{
   display: flex;
