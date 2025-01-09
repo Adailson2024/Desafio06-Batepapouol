@@ -1,8 +1,21 @@
 let conversas=[];
+let participantes=[];
 let campoUsuario=prompt("Qual o seu nome?");
 let horaAtualEmBrasilia = obterHoraBrasilia();
+let publicoouprivado="";
+function obterHoraBrasilia() {
+  const options = {
+    timeZone: 'America/Sao_Paulo',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  };
+  const horaBrasilia = new Date().toLocaleString('pt-BR', options);
+  return horaBrasilia;
+}
 while (!campoUsuario) {
-  campoUsuario = prompt("O nome não pode estar vazio. Por favor, insira seu nome:")};
+  campoUsuario = prompt("O nome não pode estar vazio. Por favor, insira seu nome:");
+}
   entrarNaSala();
 
 function mostrarUsuarios() {
@@ -11,10 +24,56 @@ function mostrarUsuarios() {
   usuarios.classList.toggle('mostrar'); 
   
 }
+function formadeEnvio(p1) {
+  const selecionado = document.querySelector(".formadeenvio .selecionador");
+  
+  publicoouprivado = p1.children[1].innerHTML;
+  
+  if(selecionado !== null){
+    selecionado.classList.remove("selecionador");}
+    p1.classList.add("selecionador");
+}
+/*function publicoouReservado(){
+  const ul=document.querySelector(".caixademensagem");
+  ul.innerHTML="";
+
+  for (let i=0;i<participantes.length;i++){
+    ul.innerHTML+=`
+   <li>${conversas[i].type} </li>`;
+  }
+}*/
+
+function renderizarParticipantes(){
+  const ul=document.querySelector(".quemenviar");
+ // ul.scrollIntoView();
+  ul.innerHTML="";
+
+  for (let i=0;i<participantes.length;i++){
+    ul.innerHTML+=`
+    
+    <li>
+  <ion-icon name="person-circle"></ion-icon> 
+  <label class="a" for="reservado"> ${participantes[i].name} </label>
+    </li>`;
+  }
+}
+
+function buscarParticipantes(){
+  axios.get("https://mock-api.driven.com.br/api/v6/uol/participants/c2ce79dc-5717-4d56-abe8-e4fa0244db39")
+ .then(processarParticipantes)
+ .catch();
+ 
+ }
+ function processarParticipantes(resposta){
+   console.log(resposta)
+   participantes=resposta.data;
+   
+   renderizarParticipantes();
+ }
 
 function renderizarConversas(){
   const ul=document.querySelector(".mensagens");
-  //ul.scrollIntoView();
+  ul.scrollIntoView();
   ul.innerHTML="";
 
   for (let i=0;i<conversas.length;i++){
@@ -66,16 +125,7 @@ function processarListaConversa(resposta){
   
   renderizarConversas();
 }
-function obterHoraBrasilia() {
-  const options = {
-    timeZone: 'America/Sao_Paulo',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric'
-  };
-  const horaBrasilia = new Date().toLocaleString('pt-BR', options);
-  return horaBrasilia;
-}
+
 
 // Chamando a função e armazenando o resultado em uma variável
 
@@ -96,7 +146,7 @@ function adicionarConversas(){
     from: campoUsuario,
     to: "Todos",
     text: texto,
-    type: "message",
+    type: publicoouprivado,
     time:horaAtualEmBrasilia
   }
   axios.post("https://mock-api.driven.com.br/api/v6/uol/messages/c2ce79dc-5717-4d56-abe8-e4fa0244db39", novaConversa)
@@ -125,3 +175,4 @@ function mostrarErro(){
 setInterval(buscarConversas, 5000);
 
 
+setInterval(buscarParticipantes,1000);

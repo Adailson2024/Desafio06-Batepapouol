@@ -12,37 +12,48 @@
   </head>
   <body>
     <div class="tela">
-      <div class="cabeçalho">
+      <div class="cabeçalho" >
         <img src="imagens/logouol.png" />
         <ion-icon class="escolherDestinatário" name="people" onclick="mostrarUsuarios()"></ion-icon>
       </div>
       <div class="usuarios escondido" >
         <div class="texto1"><h2>Escolha um contato para enviar mensagem:</h2></div>
-        <ul class="quemenviar">
-          <li>
-          <ion-icon name="people"></ion-icon><p>Todos</p>
-          </li>
-        </ul>
+        <div class="escolhertodos">
+          <ul >
+            <li>
+              <ion-icon name="people"></ion-icon> 
+              <label class="a" for="reservado">Todos</label>
+            </li>
+          </ul>
+        </div>
+        <div class="quemenviar">
+          <ul >
+            
+          </ul>
+        </div>
+        
         <div class="texto1"><h2>Escolha a visibilidade:</h2></div>
         <div class="formadeenvio">
-          <div class="formadeenvio1">
+          <div class="formadeenvio1" role="radio" aria-checked="true" onclick="formadeEnvio(this)">
             <ion-icon name="lock-open"></ion-icon>
-            <p>Público</p>
+            <label class="a" for="publico">Público</label>
           </div>
-          <div class="formadeenvio1">
+          <div class="formadeenvio2" role="radio" onclick="formadeEnvio(this)">
             <ion-icon name="lock-closed"></ion-icon>
-            <p>Reservadamente</p>
+            <label class="a" for="reservado">Reservadamente</label>
           </div>
         </div>
       </div>
-      <div class="mensagens" onclick="mostrarUsuarios()">
+      <div class="mensagens" >
         <ul>
         </ul>
       </div>
       <div class="rodapé">
         <div class="caixademensagem">
-          <input type="text" class="mensagem" placeholder="Digite sua mensagem aqui">
+          <input type="text" class="mensagem" placeholder="Escreva aqui..." onclick="mostrarUsuarios()">
+          <span class="paraquemenviar">jjjjjjjjj</span>
         </div>
+        
         <button onclick="adicionarConversas()">
           <ion-icon name="paper-plane-outline"></ion-icon>
         </button>
