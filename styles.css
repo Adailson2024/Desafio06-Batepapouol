@@ -140,7 +140,7 @@
     /* gap: 0px; // Essa propriedade não se aplica aqui */
     opacity: 1; /* Torna o elemento visível */
     background: #FFFFFF;
-    z-index: 2;
+    z-index: 3;
     /* justify-content: right; // Essa propriedade não se aplica a elementos com position: fixed */
   position: absolute;
   }
@@ -220,6 +220,7 @@ color: #000000;
 margin-left: -20px;
 margin-top: 0px;
 }
+
 .quemenviar > p {
   font-family: Roboto;
 font-size: 16px;
@@ -235,12 +236,18 @@ margin-left: 5px;
   margin-top: -60px;
   margin-left: 20px;
 }
+.b{
+
+width: 25px;
+height: 15px;
+color:#28BB25;
+}
 .selecionador{
-
-  content: "▶"; /* Ou use um ícone */
-    color: green;
-    margin-left: 5px;}
-
+display: none;
+}
+.formadeenvio1{
+  width: 100%;
+}
 .formadeenvio{
   margin-top: 0px;
   margin-left: 8px;
@@ -255,4 +262,14 @@ text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 
+}
+.escuro{
+  width: 375px;
+height: 667px;
+top: -1px;
+gap: 0px;
+opacity: 0px;
+background: #00000099;
+position: fixed;
+z-index: 2;
 }

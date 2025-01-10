@@ -22,17 +22,46 @@ function mostrarUsuarios() {
   const usuarios = document.querySelector('.usuarios');
   usuarios.classList.toggle('escondido');
   usuarios.classList.toggle('mostrar'); 
+  const escuro = document.querySelector('.escuro');
+  escuro.classList.toggle('escondido');
+  escuro.classList.toggle('mostrar'); 
   
 }
-function formadeEnvio(p1) {
-  const selecionado = document.querySelector(".formadeenvio .selecionador");
+// function formadeEnvio(p1) {
+//   const selecionado = document.querySelector(".formadeenvio");
   
+//   publicoouprivado = p1.children[1].innerHTML;
+  
+//   if (selecionado!== null) {
+//     const check = document.querySelector('.b');
+//   check.classList.toggle('selecionador');
+//   check.classList.toggle('mostrar');  
+//   }
+// }
+
+
+function formaEnvio(p1){
   publicoouprivado = p1.children[1].innerHTML;
-  
-  if(selecionado !== null){
-    selecionado.classList.remove("selecionador");}
-    p1.classList.add("selecionador");
+
+  const todosOsBotoes = document.querySelectorAll(".formadeenvio .b");
+
+  todosOsBotoes.forEach(botao => {
+    botao.classList.add("selecionador");
+    botao.classList.add("mostrar");
+
+  })
+
+  const check = p1.querySelector(".b");
+  if(check){
+    check.classList.remove("selecionador");
+    check.classList.remove("mostrar");
+  }
+
 }
+
+
+
+
 /*function publicoouReservado(){
   const ul=document.querySelector(".caixademensagem");
   ul.innerHTML="";
@@ -51,7 +80,7 @@ function renderizarParticipantes(){
   for (let i=0;i<participantes.length;i++){
     ul.innerHTML+=`
     
-    <li>
+    <li >
   <ion-icon name="person-circle"></ion-icon> 
   <label class="a" for="reservado"> ${participantes[i].name} </label>
     </li>`;
@@ -81,6 +110,12 @@ function renderizarConversas(){
     <li>
   (${conversas[i].time}) ${conversas[i].from} para ${conversas[i].to}: ${conversas[i].text}
     </li>`;
+
+    const ultimaMensagem = ul.lastChild;
+    if(ultimaMensagem){
+      ultimaMensagem.scrollIntoView({behavior: "smooth"})
+    }
+
   }
 }
 function entrarNaSala(){

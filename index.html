@@ -28,19 +28,21 @@
         </div>
         <div class="quemenviar">
           <ul >
-            
+          
           </ul>
         </div>
         
         <div class="texto1"><h2>Escolha a visibilidade:</h2></div>
         <div class="formadeenvio">
-          <div class="formadeenvio1" role="radio" aria-checked="true" onclick="formadeEnvio(this)">
+          <div class="formadeenvio1" role="radio" aria-checked="true" onclick="formaEnvio(this)">
             <ion-icon name="lock-open"></ion-icon>
             <label class="a" for="publico">Público</label>
+            <ion-icon class="b selecionador" name="checkmark-sharp"></ion-icon>
           </div>
-          <div class="formadeenvio2" role="radio" onclick="formadeEnvio(this)">
+          <div class="formadeenvio2" role="radio" onclick="formaEnvio(this)">
             <ion-icon name="lock-closed"></ion-icon>
             <label class="a" for="reservado">Reservadamente</label>
+            <ion-icon class="b selecionador" name="checkmark-sharp"></ion-icon>
           </div>
         </div>
       </div>
@@ -50,8 +52,8 @@
       </div>
       <div class="rodapé">
         <div class="caixademensagem">
-          <input type="text" class="mensagem" placeholder="Escreva aqui..." onclick="mostrarUsuarios()">
-          <span class="paraquemenviar">jjjjjjjjj</span>
+          <input type="text" class="mensagem" placeholder="Escreva aqui..." >
+          <span class="paraquemenviar">Enviando para ${dtodos} (${publicoouprivado})</span>
         </div>
         
         <button onclick="adicionarConversas()">
@@ -59,6 +61,7 @@
         </button>
       </div>
     </div>
+    <div class="escuro escondido" onclick="mostrarUsuarios()"></div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
