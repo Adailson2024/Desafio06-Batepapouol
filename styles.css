@@ -185,7 +185,7 @@ text-decoration-skip-ink: none;
 color: #000000;
 bottom:100px ;
 justify-content: center;
-overflow-y: scroll;
+overflow-y: hidden;
 
 }
 .quemenviar{

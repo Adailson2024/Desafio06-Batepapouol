@@ -27,18 +27,6 @@ function mostrarUsuarios() {
   escuro.classList.toggle('mostrar'); 
   
 }
-// function formadeEnvio(p1) {
-//   const selecionado = document.querySelector(".formadeenvio");
-  
-//   publicoouprivado = p1.children[1].innerHTML;
-  
-//   if (selecionado!== null) {
-//     const check = document.querySelector('.b');
-//   check.classList.toggle('selecionador');
-//   check.classList.toggle('mostrar');  
-//   }
-// }
-
 
 function formaEnvio(p1){
   publicoouprivado = p1.children[1].innerHTML;
@@ -71,7 +59,24 @@ function formaEnvio(p1){
    <li>${conversas[i].type} </li>`;
   }
 }*/
+function paraquemEnviar(p1){
+  destinatario = p1.children[1].innerHTML;
 
+  const todosOsBotoes = document.querySelectorAll(".quemenviar .b");
+
+  todosOsBotoes.forEach(botao => {
+    botao.classList.add("selecionador");
+    botao.classList.add("mostrar");
+
+  })
+
+  const check = p1.querySelector(".b");
+  if(check){
+    check.classList.remove("selecionador");
+    check.classList.remove("mostrar");
+  }
+
+}
 function renderizarParticipantes(){
   const ul=document.querySelector(".quemenviar");
  // ul.scrollIntoView();
@@ -80,9 +85,10 @@ function renderizarParticipantes(){
   for (let i=0;i<participantes.length;i++){
     ul.innerHTML+=`
     
-    <li >
+    <li onclick="paraquemEnviar(this)">
   <ion-icon name="person-circle"></ion-icon> 
   <label class="a" for="reservado"> ${participantes[i].name} </label>
+  <ion-icon class="b selecionador" name="checkmark-sharp"></ion-icon>
     </li>`;
   }
 }
@@ -210,4 +216,4 @@ function mostrarErro(){
 setInterval(buscarConversas, 5000);
 
 
-setInterval(buscarParticipantes,1000);
+setInterval(buscarParticipantes,5000);
