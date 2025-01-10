@@ -3,6 +3,7 @@ let participantes=[];
 let campoUsuario=prompt("Qual o seu nome?");
 let horaAtualEmBrasilia = obterHoraBrasilia();
 let publicoouprivado="";
+let destinatario="";
 function obterHoraBrasilia() {
   const options = {
     timeZone: 'America/Sao_Paulo',
@@ -28,9 +29,11 @@ function mostrarUsuarios() {
   
 }
 
+
+
 function formaEnvio(p1){
   publicoouprivado = p1.children[1].innerHTML;
-
+  console.log(publicoouprivado);
   const todosOsBotoes = document.querySelectorAll(".formadeenvio .b");
 
   todosOsBotoes.forEach(botao => {
@@ -46,24 +49,9 @@ function formaEnvio(p1){
   }
 
 }
-
-
-
-
-/*function publicoouReservado(){
-  const ul=document.querySelector(".caixademensagem");
-  ul.innerHTML="";
-
-  for (let i=0;i<participantes.length;i++){
-    ul.innerHTML+=`
-   <li>${conversas[i].type} </li>`;
-  }
-}*/
 function paraquemEnviar(p1){
   destinatario = p1.children[1].innerHTML;
-
   const todosOsBotoes = document.querySelectorAll(".quemenviar .b");
-
   todosOsBotoes.forEach(botao => {
     botao.classList.add("selecionador");
     botao.classList.add("mostrar");
@@ -79,7 +67,6 @@ function paraquemEnviar(p1){
 }
 function renderizarParticipantes(){
   const ul=document.querySelector(".quemenviar");
- // ul.scrollIntoView();
   ul.innerHTML="";
 
   for (let i=0;i<participantes.length;i++){
@@ -184,8 +171,8 @@ function adicionarConversas(){
     return;
   }
   const novaConversa={
-    from: campoUsuario,
-    to: "Todos",
+    from: todos,
+    to: check,
     text: texto,
     type: publicoouprivado,
     time:horaAtualEmBrasilia
