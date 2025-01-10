@@ -29,8 +29,6 @@ function mostrarUsuarios() {
   
 }
 
-
-
 function formaEnvio(p1){
   publicoouprivado = p1.children[1].innerHTML;
   console.log(publicoouprivado);
@@ -147,11 +145,41 @@ promessas.then(processarListaConversa);
 promessas.catch(mostrarErro)
 
 }
-function processarListaConversa(resposta){
-  console.log(resposta)
-  conversas=resposta.data;
+//function processarListaConversa(resposta){
+ // console.log(resposta)
+  //conversas=resposta.data;
   
-  renderizarConversas();
+  //renderizarConversas();
+//}
+function processarListaConversa(resposta) {
+  console.log(resposta);
+  conversas = resposta.data;
+
+  const listaMensagens = document.querySelector(".mensagens ul");
+  listaMensagens.innerHTML = ""; // Clear previous messages
+
+  for (let i = 0; i < conversas.length; i++) {
+    const mensagem = document.createElement("li");
+
+    const tipoMensagem = conversas[i].type;
+    let corDeFundo = "white"; // Default background color
+
+    if (tipoMensagem === "Público" || tipoMensagem === "Reservadamente") {
+      corDeFundo = "red"; // Red for reserved messages
+    } else if (tipoMensagem === "status") {
+      corDeFundo = "gray"; // Gray for status messages
+    }
+
+    mensagem.style.backgroundColor = corDeFundo;
+
+    mensagem.innerHTML = `(${conversas[i].time}) ${conversas[i].from} para ${conversas[i].to}: ${conversas[i].text}`;
+    listaMensagens.appendChild(mensagem);
+
+    const ultimaMensagem = listaMensagens.lastChild;
+    if (ultimaMensagem) {
+      ultimaMensagem.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 }
 
 
@@ -171,12 +199,13 @@ function adicionarConversas(){
     return;
   }
   const novaConversa={
-    from: todos,
-    to: check,
+    from: campoUsuario,
+    to: destinatario,
     text: texto,
-    type: publicoouprivado,
-    time:horaAtualEmBrasilia
+    type: publicoouprivado
   }
+  console.log(novaConversa);
+
   axios.post("https://mock-api.driven.com.br/api/v6/uol/messages/c2ce79dc-5717-4d56-abe8-e4fa0244db39", novaConversa)
   
   .then(receberResposta)
@@ -200,7 +229,7 @@ function mostrarErro(){
 //setTimeout(function() {
 //  window.location.reload(false);
 //}, 5000);
-setInterval(buscarConversas, 5000);
+setInterval(buscarConversas, 3000);
 
 
 setInterval(buscarParticipantes,5000);
