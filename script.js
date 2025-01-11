@@ -30,7 +30,7 @@ function mostrarUsuarios() {
 }
 
 function formaEnvio(p1){
-  publicoouprivado = p1.children[1].innerHTML;
+  publicoouprivado = p1.children[2].innerHTML;
   console.log(publicoouprivado);
   const todosOsBotoes = document.querySelectorAll(".formadeenvio .b");
 
@@ -96,12 +96,12 @@ function renderizarConversas(){
   ul.innerHTML="";
 
   for (let i = 0; i < conversas.length; i++) {
-    if (conversas[i].type == "Público") {
+    if (conversas[i].type == "message") {
       document.querySelector(".mensagens").innerHTML += `
       <div  class="enviadaspublicas">
         <p>
           <label>(${conversas[i].time})</label>
-          <strong>${conversas[i].from}</strong>
+          <strong>${conversas[i].from}</strong> para <label>(${conversas[i].to})</label>:
           ${conversas[i].text}
         </p>
       </div>
@@ -110,13 +110,13 @@ function renderizarConversas(){
       document.querySelector(".mensagens").innerHTML += `
       <div  class="entrarOusair">
         <p>
-          <label>(${conversas[i].time})</label>
-          <strong>${conversas[i].from}</strong>
+          <label>(${conversas[i].time})</label> 
+          <strong>${conversas[i].from}</strong>  
           ${conversas[i].text}
         </p>
       </div>`;
     } else if (
-      conversas[i].type === "Reservadamente" &&
+      conversas[i].type === "private_message" &&
       campoUsuario === conversas[i].to
     ) {
       {
@@ -124,7 +124,7 @@ function renderizarConversas(){
       <div class="enviadasprivadas">
         <p>
           <label>(${conversas[i].time})</label>
-          <strong >${conversas[i].from} reservadamente para</strong>
+          <strong >${conversas[i].from} </strong> para
           <strong >(${conversas[i].to}:</strong>
           ${conversas[i].text}
         </p>
