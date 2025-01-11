@@ -193,29 +193,48 @@ overflow-y:auto;
 height: 40px;
 top: 150px;
 gap: 0px;
-border-radius: 2px;
+border-radius: 5px;
 opacity: 0px;
 background: #FFFFFF;
-
+justify-content: left;
+align-items: center;
+display: flex;
+margin-top: 15px;
+margin-bottom: 15px;
+}
+p{
+  text-align: left;
+  padding: 5px;
+  align-items: center;
+  padding: 10px;
 }
 .enviadasprivadas{
   width: 320px;
 height: 63px;
 top: 238px;
 gap: 0px;
-border-radius: 2px;
+border-radius: 5px;
 opacity: 0px;
 background: #FFDEDE;
-
+justify-content: left;
+align-items: center;
+display: flex;
+margin-top: 15px;
+margin-bottom: 15px;
 }
 .entrarOusair{
   width: 320px;
 height: 40px;
 top: 305px;
 gap: 0px;
-border-radius: 2px;
+border-radius: 5px;
 opacity: 0px;
 background: #DCDCDC;
+justify-content: left;
+align-items: center;
+display: flex;
+margin-top: 15px;
+margin-bottom: 15px;
 }
 
 .quemenviar{
