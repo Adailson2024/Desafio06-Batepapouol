@@ -145,42 +145,13 @@ promessas.then(processarListaConversa);
 promessas.catch(mostrarErro)
 
 }
-//function processarListaConversa(resposta){
- // console.log(resposta)
-  //conversas=resposta.data;
+function processarListaConversa(resposta){
+  console.log(resposta)
+  conversas=resposta.data;
   
-  //renderizarConversas();
-//}
-function processarListaConversa(resposta) {
-  console.log(resposta);
-  conversas = resposta.data;
-
-  const listaMensagens = document.querySelector(".mensagens ul");
-  listaMensagens.innerHTML = ""; // Clear previous messages
-
-  for (let i = 0; i < conversas.length; i++) {
-    const mensagem = document.createElement("li");
-
-    const tipoMensagem = conversas[i].type;
-    let corDeFundo = "white"; // Default background color
-
-    if (tipoMensagem === "Público" || tipoMensagem === "Reservadamente") {
-      corDeFundo = "red"; // Red for reserved messages
-    } else if (tipoMensagem === "status") {
-      corDeFundo = "gray"; // Gray for status messages
-    }
-
-    mensagem.style.backgroundColor = corDeFundo;
-
-    mensagem.innerHTML = `(${conversas[i].time}) ${conversas[i].from} para ${conversas[i].to}: ${conversas[i].text}`;
-    listaMensagens.appendChild(mensagem);
-
-    const ultimaMensagem = listaMensagens.lastChild;
-    if (ultimaMensagem) {
-      ultimaMensagem.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+  renderizarConversas();
 }
+
 
 
 // Chamando a função e armazenando o resultado em uma variável
