@@ -93,22 +93,47 @@ function buscarParticipantes(){
 
 function renderizarConversas(){
   const ul=document.querySelector(".mensagens");
-  ul.scrollIntoView();
   ul.innerHTML="";
 
-  for (let i=0;i<conversas.length;i++){
-    ul.innerHTML+=`
-    <li>
-  (${conversas[i].time}) ${conversas[i].from} para ${conversas[i].to}: ${conversas[i].text}
-    </li>`;
-
-    const ultimaMensagem = ul.lastChild;
-    if(ultimaMensagem){
-      ultimaMensagem.scrollIntoView({behavior: "smooth"})
+  for (let i = 0; i < conversas.length; i++) {
+    if (conversas[i].type == "Público") {
+      document.querySelector(".mensagens").innerHTML += `
+      <div  class="enviadaspublicas">
+        <p>
+          <label>(${conversas[i].time})</label>
+          <strong>${conversas[i].from}</strong>
+          ${conversas[i].text}
+        </p>
+      </div>
+      `;
+    } else if (conversas[i].type === "status") {
+      document.querySelector(".mensagens").innerHTML += `
+      <div  class="entrarOusair">
+        <p>
+          <label>(${conversas[i].time})</label>
+          <strong>${conversas[i].from}</strong>
+          ${conversas[i].text}
+        </p>
+      </div>`;
+    } else if (
+      conversas[i].type === "Reservadamente" &&
+      campoUsuario === conversas[i].to
+    ) {
+      {
+        document.querySelector(".mensagens").innerHTML += `
+      <div class="enviadasprivadas">
+        <p>
+          <label>(${conversas[i].time})</label>
+          <strong >${conversas[i].from} reservadamente para</strong>
+          <strong >(${conversas[i].to}:</strong>
+          ${conversas[i].text}
+        </p>
+      </div>`;
+      }
     }
-
   }
 }
+
 function entrarNaSala(){
   const usuario = {name:campoUsuario};
   axios.post(`https://mock-api.driven.com.br/api/v6/uol/participants/c2ce79dc-5717-4d56-abe8-e4fa0244db39`,
@@ -200,7 +225,7 @@ function mostrarErro(){
 //setTimeout(function() {
 //  window.location.reload(false);
 //}, 5000);
-setInterval(buscarConversas, 3000);
+setInterval(buscarConversas, 5000);
 
 
-setInterval(buscarParticipantes,5000);
+setInterval(buscarParticipantes,10000);

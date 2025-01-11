@@ -170,7 +170,7 @@ li {
 
 .mensagens {
   width: 350px;
-height: 400px;
+height: 500px;
 top: 88px;
 left: 165px;
 gap: 0px;
@@ -184,10 +184,41 @@ text-underline-position: from-font;
 text-decoration-skip-ink: none;
 color: #000000;
 bottom:100px ;
-justify-content: center;
-overflow-y: hidden;
+justify-content: flex-end;
+overflow-y:auto;
 
 }
+.enviadaspublicas{
+  width: 375px;
+height: 40px;
+top: 150px;
+gap: 0px;
+border-radius: 2px 0px 0px 0px;
+opacity: 0px;
+background: #FFFFFF;
+
+}
+.enviadasprivadas{
+  width: 375px;
+height: 63px;
+top: 238px;
+gap: 0px;
+border-radius: 2px 0px 0px 0px;
+opacity: 0px;
+background: #FFDEDE;
+
+}
+.entrarOusair{
+  width: 375px;
+height: 40px;
+top: 305px;
+gap: 0px;
+border-radius: 2px 0px 0px 0px;
+opacity: 0px;
+background: #DCDCDC;
+
+}
+
 .quemenviar{
 display: flex;
 flex-direction: column;
