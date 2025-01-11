@@ -101,7 +101,7 @@ function renderizarConversas(){
       <div  class="enviadaspublicas">
         <p>
           <label>(${conversas[i].time})</label>
-          <strong>${conversas[i].from}</strong> para <label>(${conversas[i].to})</label>:
+          <strong>${conversas[i].from}</strong> para <label>${conversas[i].to}</label>:
           ${conversas[i].text}
         </p>
       </div>
@@ -125,7 +125,7 @@ function renderizarConversas(){
         <p>
           <label>(${conversas[i].time})</label>
           <strong >${conversas[i].from} </strong> para
-          <strong >(${conversas[i].to}:</strong>
+          <strong >${conversas[i].to}:</strong>
           ${conversas[i].text}
         </p>
       </div>`;
