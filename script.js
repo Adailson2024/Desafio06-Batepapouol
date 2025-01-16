@@ -90,9 +90,16 @@ function paraquemEnviar(p1){
   }
 
 }
+
 function renderizarParticipantes(){
   const ul=document.querySelector(".quemenviar");
-  ul.innerHTML="";
+  ul.innerHTML=`<li onclick="paraquemEnviar(this)">
+          
+              <ion-icon name="people"></ion-icon> 
+              <label class="a" for="reservado">Todos</label>
+              <p class="escondido">message</p>
+              <ion-icon class="b selecionador" name="checkmark-sharp"></ion-icon>
+        </li>`;
 
   for (let i=0;i<participantes.length;i++){
     ul.innerHTML+=`
