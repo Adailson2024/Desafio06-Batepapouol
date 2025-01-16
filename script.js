@@ -3,6 +3,7 @@ let participantes=[];
 let campoUsuario=prompt("Qual o seu nome?");
 let horaAtualEmBrasilia = obterHoraBrasilia();
 let publicoouprivado="";
+let pp="";
 let destinatario="";
 function obterHoraBrasilia() {
   const options = {
@@ -31,6 +32,7 @@ function mostrarUsuarios() {
 
 function formaEnvio(p1){
   publicoouprivado = p1.children[2].innerHTML;
+  pp= p1.children[1].innerHTML;
   console.log(publicoouprivado);
   const todosOsBotoes = document.querySelectorAll(".formadeenvio .b");
 
@@ -47,6 +49,31 @@ function formaEnvio(p1){
   }
 
 }
+
+rodape();
+function rodape(){
+  const div=document.querySelector(".meutexto");
+  div.innerHTML="";
+
+  if (publicoouprivado === "") {
+      document.querySelector(".meutexto").innerHTML += `
+      
+          <span class="final" >
+            Enviando para Todos (público)
+          </span>
+          
+        
+      `;
+    } else if (publicoouprivado !== "") {
+      document.querySelector(".meutexto").innerHTML += `
+      
+          <span class="final" >
+            Enviando para ${destinatario} (${pp})
+          </span>
+        `;
+
+    }
+  }
 function paraquemEnviar(p1){
   destinatario = p1.children[1].innerHTML;
   const todosOsBotoes = document.querySelectorAll(".quemenviar .b");
@@ -227,6 +254,6 @@ function mostrarErro(){
 //  window.location.reload(false);
 //}, 5000);
 setInterval(buscarConversas, 5000);
-
+setInterval(rodape,1000)
 
 setInterval(buscarParticipantes,10000);

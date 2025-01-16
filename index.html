@@ -18,13 +18,11 @@
       </div>
       <div class="usuarios escondido" >
         <div class="texto1"><h2>Escolha um contato para enviar mensagem:</h2></div>
-        <div class="escolhertodos">
-          <ul >
-            <li>
+        <div class="escolhertodos" onclick="paraquemEnviar(this)">
+          
               <ion-icon name="people"></ion-icon> 
-              <label class="a" for="reservado">Todos</label>
-            </li>
-          </ul>
+              <label class="a" for="reservado"> Todos</label>
+            
         </div>
         <div class="quemenviar">
           <ul >
@@ -40,7 +38,7 @@
             <p class="escondido">message</p>
             <ion-icon class="b selecionador" name="checkmark-sharp"></ion-icon>
           </div>
-          <div class="formadeenvio2" role="radio" onclick="formaEnvio(this)">
+          <div class="formadeenvio1" role="radio" onclick="formaEnvio(this)">
             <ion-icon name="lock-closed"></ion-icon>
             <label class="a" for="reservado">Reservadamente</label>
             <p class="escondido">private_message</p>
@@ -54,11 +52,8 @@
       </div>
       <div class="rodapé">
         <div class="caixademensagem">
-          <input type="text" class="mensagem" placeholder="Escreva aqui..." >
-          
-          <span class="final" >
-            kkkkkk
-          </span>
+          <div><input type="text" class="mensagem" placeholder="Escreva aqui..." ></div>
+          <div class="meutexto"></div>
           
         </div>
         

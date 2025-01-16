@@ -279,11 +279,10 @@ text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 color: #000000;
-margin-left: 20px;
+margin-left: 10px;
 } 
 .escolhertodos{
   display: flex;
-  flex-direction: column;
   gap: 0px;
 opacity: 0px;
 font-family: Roboto;
@@ -294,7 +293,7 @@ text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 color: #000000;
-margin-left: -20px;
+margin-left: 10px;
 margin-top: 0px;
 }
 
@@ -318,6 +317,7 @@ margin-left: 5px;
 width: 25px;
 height: 15px;
 color:#28BB25;
+right: 10px;
 }
 .selecionador{
 display: none;
@@ -338,6 +338,7 @@ line-height: 18.75px;
 text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
+margin-right: 20px;
 
 }
 .escuro{
