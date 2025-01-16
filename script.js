@@ -134,7 +134,24 @@ function renderizarConversas(){
     }
   }
 }
+function scrollTexto() {
+  const texto = document.getElementById('mensagens'); // Seleciona o elemento com o ID 'texto-scroll'
+  const larguraTexto = texto.offsetWidth; // Obtém a largura total do texto
+  const containerLargura = texto.parentNode.offsetWidth; // Obtém a largura do container pai
 
+  // Verifica se a largura do texto é maior que a do container
+  if (larguraTexto > containerLargura) {
+    texto.style.animation = 'scroll ' + (larguraTexto / containerLargura) + 's linear infinite';
+  }
+}
+
+// Função para iniciar a animação
+function iniciarAnimacao() {
+  scrollTexto();
+}
+
+// Chamando a função ao carregar a página
+window.onload = iniciarAnimacao;
 function entrarNaSala(){
   const usuario = {name:campoUsuario};
   axios.post(`https://mock-api.driven.com.br/api/v6/uol/participants/c2ce79dc-5717-4d56-abe8-e4fa0244db39`,
