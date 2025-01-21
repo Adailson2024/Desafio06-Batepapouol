@@ -130,7 +130,7 @@ function renderizarConversas(){
   ul.innerHTML="";
 
   for (let i = 0; i < conversas.length; i++) {
-    if (conversas[i].type == "message") {
+    if (conversas[i].type === "message"){
       document.querySelector(".mensagens").innerHTML += `
       <div  class="enviadaspublicas">
         <p>
@@ -152,7 +152,7 @@ function renderizarConversas(){
       </div>`;
     } else if (
       conversas[i].type === "private_message" &&
-      campoUsuario === conversas[i].to
+      campoUsuario === conversas[i].to || campoUsuario === conversas[i].from
     ) {
       {
         document.querySelector(".mensagens").innerHTML += `

@@ -183,7 +183,7 @@ li {
 
 .mensagens {
   width: 375px;
-height: 450px;
+height: 500px;
 overflow-y: scroll;
 margin-left: 0;
 justify-content: flex-start;
@@ -197,7 +197,7 @@ text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 color: #000000;
-margin-bottom:100px ;
+margin-bottom:80px ;
 justify-content: left;
 
 align-items: center;
@@ -362,4 +362,294 @@ text-underline-position: from-font;
 text-decoration-skip-ink: none;
 margin-left: 10px;
 color:  #DCDCDC;
+}
+
+
+@media (width: 344px) {
+  
+  .mensagens{
+    width: 100%;
+  height: 74.96%;
+
+}
+  body{
+      width: 100%;
+    
+  }
+  .cabeçalho{
+    width: 100%;
+    height: 11.99%;
+    }
+ .rodapé{
+  width: 100%;
+  height: 11.99%;
+ }
+ .caixademensagem {
+  width: 79,73%;
+  height: 9,6%;
+}
+.entrarOusair{
+  width: 100%;
+  height: 6%;
+}
+.enviadaspublicas{
+  width: 100%;
+  height: 6%;}
+.enviadasprivadas{
+  width: 100%;
+  height: 6%;
+}
+.tela{
+  width: 100%;
+  height: 882px;
+}
+.escuro{
+  width: 100%;
+  height: 100%;
+}
+.usuarios{
+  width: 69,06%;
+    height: 100%;
+}
+
+}
+@media (width: 360px) {
+  
+  .mensagens{
+    width: 100%;
+  height: 74.96%;
+
+}
+  body{
+      width: 100%;
+    
+  }
+  .cabeçalho{
+    width: 100%;
+    height: 11.99%;
+    }
+ .rodapé{
+  width: 100%;
+  height: 11.99%;
+ }
+ .caixademensagem {
+  width: 79,73%;
+  height: 9,6%;
+}
+.entrarOusair{
+  width: 100%;
+  height: 6%;
+}
+.enviadaspublicas{
+  width: 100%;
+  height: 6%;}
+.enviadasprivadas{
+  width: 100%;
+  height: 6%;
+}
+.tela{
+  width: 100%;
+  height: 740px;
+}
+.escuro{
+  width: 100%;
+  height: 100%;
+}
+.usuarios{
+  width: 69,06%;
+    height: 100%;
+}
+
+}
+@media (min-width: 380px) {
+  
+  .mensagens{
+    width: 100%;
+  height: 74.96%;
+
+}
+  body{
+      width: 100%;
+    
+  }
+  .cabeçalho{
+    width: 100%;
+    height: 11.99%;
+    }
+ .rodapé{
+  width: 100%;
+  height: 11.99%;
+ }
+ .caixademensagem {
+  width: 79,73%;
+  height: 9,6%;
+}
+.entrarOusair{
+  width: 100%;
+  height: 6%;
+}
+.enviadaspublicas{
+  width: 100%;
+  height: 6%;}
+.enviadasprivadas{
+  width: 100%;
+  height: 6%;
+}
+.tela{
+  width: 100%;
+  height: 844px;
+}
+.escuro{
+  width: 100%;
+  height: 100%;
+}
+.usuarios{
+  width: 69,06%;
+    height: 100%;
+}
+
+}
+@media (min-width: 413px) {
+  
+  .mensagens{
+    width: 100%;
+  height: 74.96%;
+
+}
+  body{
+      width: 100%;
+    
+  }
+  .cabeçalho{
+    width: 100%;
+    height: 11.99%;
+    }
+ .rodapé{
+  width: 100%;
+  height: 11.99%;
+ }
+ .caixademensagem {
+  width: 79,73%;
+  height: 9,6%;
+}
+.entrarOusair{
+  width: 100%;
+  height: 6%;
+}
+.enviadaspublicas{
+  width: 100%;
+  height: 6%;}
+.enviadasprivadas{
+  width: 100%;
+  height: 6%;
+}
+.tela{
+  width: 100%;
+  height: 896px;
+}
+.escuro{
+  width: 100%;
+  height: 100%;
+}
+.usuarios{
+  width: 69,06%;
+    height: 100%;
+}
+
+}
+@media (min-width: 412px) {
+  
+  .mensagens{
+    width: 100%;
+  height: 74.96%;
+
+}
+  body{
+      width: 100%;
+    
+  }
+  .cabeçalho{
+    width: 100%;
+    height: 11.99%;
+    }
+ .rodapé{
+  width: 100%;
+  height: 11.99%;
+ }
+ .caixademensagem {
+  width: 79,73%;
+  height: 9,6%;
+}
+.entrarOusair{
+  width: 100%;
+  height: 6%;
+}
+.enviadaspublicas{
+  width: 100%;
+  height: 6%;}
+.enviadasprivadas{
+  width: 100%;
+  height: 6%;
+}
+.tela{
+  width: 100%;
+  height: 915px;
+}
+.escuro{
+  width: 100%;
+  height: 100%;
+}
+.usuarios{
+  width: 69,06%;
+    height: 100%;
+}
+
+}
+@media (min-width: 429px) {
+  .mensagens{
+    width: 100%;
+  height: 74.96%;
+
+}
+  body{
+      width: 100%;
+    
+  }
+  .cabeçalho{
+    width: 100%;
+    height: 11.99%;
+    }
+ .rodapé{
+  width: 100%;
+  height: 11.99%;
+ }
+ .caixademensagem {
+  width: 79,73%;
+  height: 9,6%;
+}
+.entrarOusair{
+  width: 100%;
+  height: 6%;
+}
+.enviadaspublicas{
+  width: 100%;
+  height: 6%;}
+.enviadasprivadas{
+  width: 100%;
+  height: 6%;
+}
+.tela{
+  width: 100%;
+  height: 932px;
+}
+.escuro{
+  width: 100%;
+  height: 100%;
+}
+.usuarios{
+  width: 69,06%;
+    height: 100%;
+} 
+ 
+
 }
